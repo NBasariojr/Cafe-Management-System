@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "predev": "node ../../scripts/check-package-manager.js",
     "dev": "vite",
     "start": "vite",
     "build": "vite build",

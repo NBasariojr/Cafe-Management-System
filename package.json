@@ -7,7 +7,12 @@
     "frontend/*",
     "backend"
   ],
+  "engines": {
+    "npm": "please-use-yarn",
+    "yarn": ">=4.0.0"
+  },
   "scripts": {
+    "preinstall": "node ./scripts/check-package-manager.js",
     "start:web": "yarn workspace website dev",
     "build:web": "yarn workspace website build",
     "preview:web": "yarn workspace website preview",
@@ -16,15 +21,15 @@
     "start:mobile": "yarn workspace mobile start",
     "build:mobile": "yarn workspace mobile build",
     "start:backend": "yarn workspace backend start",
-    
-    "_comment_run": "for running multiple at once using concurrently",
+    "_comment_run": "Run multiple apps using concurrently",
     "dev:web": "concurrently \"yarn workspace website dev\" \"yarn workspace backend start\"",
     "dev:desktop": "concurrently \"yarn workspace desktop start\" \"yarn workspace backend start\"",
     "dev:mobile": "concurrently \"yarn workspace mobile start\" \"yarn workspace backend start\"",
-    "_comment_build": "optional — build all at once",
+    "_comment_build": "Build all apps at once",
     "build:all": "yarn workspaces foreach run build"
   },
   "devDependencies": {
     "concurrently": "^9.2.1"
-  }
+  },
+  "packageManager": "yarn@4.10.3"
 }
