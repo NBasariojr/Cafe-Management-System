@@ -1,8 +1,16 @@
-import React from 'react';
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Home } from "./features/home";
+import "./index.css";
 
 function App() {
-  return (<div className="App">Hello, World!</div>
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
